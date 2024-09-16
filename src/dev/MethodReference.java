@@ -3,6 +3,7 @@ package dev;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public class MethodReference {
 
@@ -70,7 +71,13 @@ public class MethodReference {
 
         /** ********** Constructor Reference ********** */
 
+        // using lambda expression
+        Supplier<StringBuilder> lambdaSupplier = () -> new StringBuilder();
+        var sb1 = lambdaSupplier.get();
 
+        // using method reference
+        Supplier<StringBuilder> constructorRefSupplier = StringBuilder::new;
+        var sb2 = constructorRefSupplier.get();
     }
 }
 
