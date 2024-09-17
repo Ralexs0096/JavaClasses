@@ -10,7 +10,16 @@ public class StringBuilderExercise {
          * Convert the StringBuilder to a string and print it.
          */
 
-        // Your Code Here...
+        var myText = new StringBuilder();
+
+        myText.append("Java");
+        myText.append(" ");
+        myText.append("is");
+        myText.append(" ");
+        myText.append("fun");
+
+        String myTextString = myText.toString();
+        System.out.println(myTextString);
 
         /**
          * Exercise 2:
@@ -21,7 +30,10 @@ public class StringBuilderExercise {
          *
          */
 
-        // Your Code Here...
+        var initialText = new StringBuilder("I love coding in Java");
+        initialText.replace(17, 21, "Python");
+
+        System.out.println(initialText);
 
         /**
          * Exercise 3:
@@ -31,7 +43,10 @@ public class StringBuilderExercise {
          *
          */
 
-        // Your Code Here...
+        var javaProgrammingText = new StringBuilder("Java Programming");
+        javaProgrammingText.reverse();
+
+        System.out.println(javaProgrammingText);
 
         /**
          * Exercise 4:
@@ -42,7 +57,11 @@ public class StringBuilderExercise {
          *
          */
 
-        // Your Code Here...
+        var iAmLearningText = new StringBuilder("I am learning");
+
+        iAmLearningText.insert(5, "currently ");
+
+        System.out.println(iAmLearningText);
 
         /**
          * Exercise 5:
@@ -52,6 +71,10 @@ public class StringBuilderExercise {
          * Print the final result.
          */
 
-        // Your Code Here...
+        var myStr = new StringBuilder("Welcome to the world of Java");
+
+        myStr.replace(24, 29, "Programming");
+
+        System.out.println(myStr);
     }
 }
