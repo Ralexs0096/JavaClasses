@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.function.BiFunction;
 import java.util.function.Consumer;
 
 public class LambdaClass {
@@ -7,7 +8,7 @@ public class LambdaClass {
         return num1 + num2;
     }
 
-    public static String greet(String name) {
+    public String greet(String name) {
         String saludo = "Hello " + name;
         return saludo;
     }
@@ -25,6 +26,14 @@ public class LambdaClass {
 
     public static void main(String[] args) {
 
+//       BiFunction<Integer, Integer, Integer> suma = (num1, num2) -> num1 + num2;
+
+        Consumer log = value -> {
+            System.out.println(value);
+        };
+
+        log.accept("Nahum is a java Crack!");
+
        var numbers = new ArrayList<Integer>(); // LVTI
 
         numbers.add(2);
@@ -32,29 +41,24 @@ public class LambdaClass {
         numbers.add(9);
         numbers.add(22);
 
-//        for (Integer num : numbers){
+        for (Integer num : numbers){
+            log.accept(num);
 //            System.out.println(num);
-//        }
+        }
 
 //        numbers.forEach(System.out::println); // method reference
 
         // lambda expression
-        numbers.forEach(value -> {
-            System.out.println(value);
-        });
+        numbers.forEach(log);
 
         // *********** Store the lambda function in a variable ***********
         var cars = new LinkedList<String>();
-
-        Consumer<String> printCars = (value) -> {
-            System.out.println(value);
-        };
 
         cars.add("Tesla");
         cars.add("Toyota");
         cars.add("Kia");
         cars.add("Hyundai");
 
-        cars.forEach(printCars);
+        cars.forEach(log);
     }
 }
