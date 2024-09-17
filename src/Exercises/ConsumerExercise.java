@@ -1,5 +1,10 @@
 package Exercises;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Consumer;
+
 public class ConsumerExercise {
     public static void main(String[] args) {
         /**
@@ -10,7 +15,8 @@ public class ConsumerExercise {
          *
          */
 
-        // Your Code Here...
+        Consumer<String> convertToUppercase = text -> System.out.println(text.toUpperCase());
+        convertToUppercase.accept("hello");
 
         /**
          * Exercise 2:
@@ -20,7 +26,8 @@ public class ConsumerExercise {
          *
          */
 
-        // Your Code Here...
+        Consumer<Integer> squaresInt = num -> System.out.println(Math.pow(num, 2));
+        squaresInt.accept(4);
 
         /**
          * Exercise 3:
@@ -30,7 +37,10 @@ public class ConsumerExercise {
          *
          */
 
-        // Your Code Here...
+        var myIntegers = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7));
+        Consumer<List<Integer>> myConsumer = list -> list.forEach(System.out::println);
+
+        myConsumer.accept(myIntegers);
 
         /**
          * Exercise 4:
@@ -40,7 +50,11 @@ public class ConsumerExercise {
          *
          */
 
-        // Your Code Here...
+        var myText = new StringBuilder("Hello");
+        Consumer<StringBuilder> myStringBuilderConsumer = str -> str.append(" World!");
+
+        myStringBuilderConsumer.accept(myText);
+        System.out.println(myText);
 
         /**
          * Exercise 5:
@@ -49,7 +63,17 @@ public class ConsumerExercise {
          * Test it with different integers.
          */
 
-        // Your Code Here...
+        Consumer<Integer> isOddOrEven = num -> {
+            if(num % 2 == 0 ){
+                System.out.println("even");
+            } else {
+                System.out.println("odd");
+            }
+        };
+
+        isOddOrEven.accept(10);
+        isOddOrEven.accept(19);
+        isOddOrEven.accept(57);
 
     }
 }
