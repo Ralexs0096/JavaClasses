@@ -17,7 +17,22 @@ public class StringExercises {
          * output: 7
          */
 
-        // Your Code HERE:
+        String sentence = "Java is a powerful programming language";
+        int wordCount = countWords(sentence);
+        System.out.println("Number of words: " + wordCount);
+    }
+
+    public static int countWords(String sentence) {
+        sentence = sentence.trim();
+
+        if (sentence.isEmpty()) {
+            return 0;
+        }
+
+        String[] words = sentence.split("\\s");
+
+        return words.length;}}
+
 
         /**
          * Challenge 2: Vowel Replacer
@@ -58,5 +73,4 @@ public class StringExercises {
          */
 
         // Your Code HERE:
-    }
-}
+
