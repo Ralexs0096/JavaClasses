@@ -31,7 +31,9 @@ public class StringExercises {
 
         String[] words = sentence.split("\\s");
 
-        return words.length;}}
+        return words.length;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
 
         /**
@@ -50,7 +52,21 @@ public class StringExercises {
          * L**rn*ng J*v* *s f*n
          */
 
-        // Your Code HERE:
+
+//        String text = "Learning java is fun";
+//        char character = '*';
+//        String result = replaceVowels(text, character );
+//        System.out.println("Original text : " + text);
+//        System.out.println("Modified text : " + result);
+//
+//        }
+//
+//        public static String replaceVowels(String vowels, char replacement) {
+//            return vowels.replaceAll("[aeiouAEIOU]", String.valueOf(replacement));
+//        }
+//        }
+
+        //////////////////////////////////////////////////////////////////////////////////
 
         /**
          * Challenge 3: Palindrome Validator
@@ -72,5 +88,20 @@ public class StringExercises {
          * It's not a palindrome
          */
 
-        // Your Code HERE:
-
+//        String original = "A man a plan a canal Panama";
+//
+//        if (isPalindrome(original)){
+//            System.out.println("It's a palindrome");
+//        } else {
+//            System.out.println("It's not a palindrome");
+//        }}
+//        public static boolean isPalindrome(String str) {
+//
+//            String normalText = str.replaceAll("[\\W_]", " ").toLowerCase();
+//
+//
+//            String reversed = new StringBuilder(normalText).reverse().toString();
+//
+//            return normalText.equals(reversed);
+        }
+    }
