@@ -53,17 +53,17 @@ public class StringExercises {
          */
 
 
-        String text = "Learning java is fun";
-        char character = '*';
-        String result = replaceVowels(text, character );
-        System.out.println("Original text : " + text);
-        System.out.println("Modified text : " + result);
+//        String text = "Learning java is fun";
+//        char character = '*';
+//        String result = replaceVowels(text, character );
+//        System.out.println("Original text : " + text);
+//        System.out.println("Modified text : " + result);
+//
+//        }
+//
+//        public static String replaceVowels(String vowels, char replacement) {
+//            return vowels.replaceAll("[aeiouAEIOU]", String.valueOf(replacement));
 
-        }
-
-        public static String replaceVowels(String vowels, char replacement) {
-            return vowels.replaceAll("[aeiouAEIOU]", String.valueOf(replacement));
-        
 
 
         //////////////////////////////////////////////////////////////////////////////////
@@ -88,20 +88,20 @@ public class StringExercises {
          * It's not a palindrome
          */
 
-//        String original = "A man a plan a canal Panama";
-//
-//        if (isPalindrome(original)){
-//            System.out.println("It's a palindrome");
-//        } else {
-//            System.out.println("It's not a palindrome");
-//        }}
-//        public static boolean isPalindrome(String str) {
-//
-//            String normalText = str.replaceAll("[\\W_]", " ").toLowerCase();
-//
-//
-//            String reversed = new StringBuilder(normalText).reverse().toString();
-//
-//            return normalText.equals(reversed);
+        String original = "A man a plan a canal Panama";
+
+        if (isPalindrome(original)){
+            System.out.println("It's a palindrome");
+        } else {
+            System.out.println("It's not a palindrome");
+        }}
+        public static boolean isPalindrome(String str) {
+
+            String normalText = str.replaceAll("[\\W_]", " ").toLowerCase();
+
+
+            String reversed = new StringBuilder(normalText).reverse().toString();
+
+            return normalText.equals(reversed);
         }
     }
