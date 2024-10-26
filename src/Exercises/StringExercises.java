@@ -17,21 +17,21 @@ public class StringExercises {
          * output: 7
          */
 
-        String sentence = "Java is a powerful programming language";
-        int wordCount = countWords(sentence);
-        System.out.println("Number of words: " + wordCount);
-    }
-
-    public static int countWords(String sentence) {
-        sentence = sentence.trim();
-
-        if (sentence.isEmpty()) {
-            return 0;
-        }
-
-        String[] words = sentence.split("\\s");
-
-        return words.length;
+//        String sentence = "Java is a powerful programming language";
+//        int wordCount = countWords(sentence);
+//        System.out.println("Number of words: " + wordCount);
+//    }
+//
+//    public static int countWords(String sentence) {
+//        sentence = sentence.trim();
+//
+//        if (sentence.isEmpty()) {
+//            return 0;
+//        }
+//
+//        String[] words = sentence.split("\\s");
+//
+//        return words.length;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -53,18 +53,18 @@ public class StringExercises {
          */
 
 
-//        String text = "Learning java is fun";
-//        char character = '*';
-//        String result = replaceVowels(text, character );
-//        System.out.println("Original text : " + text);
-//        System.out.println("Modified text : " + result);
-//
-//        }
-//
-//        public static String replaceVowels(String vowels, char replacement) {
-//            return vowels.replaceAll("[aeiouAEIOU]", String.valueOf(replacement));
-//        }
-//        }
+        String text = "Learning java is fun";
+        char character = '*';
+        String result = replaceVowels(text, character );
+        System.out.println("Original text : " + text);
+        System.out.println("Modified text : " + result);
+
+        }
+
+        public static String replaceVowels(String vowels, char replacement) {
+            return vowels.replaceAll("[aeiouAEIOU]", String.valueOf(replacement));
+        
+
 
         //////////////////////////////////////////////////////////////////////////////////
 
