@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.IOException;
 import java.io.FileWriter;
+import java.util.Scanner;
 
 public class FileCreation {
     public static void main(String[] args) {
@@ -14,10 +15,10 @@ public class FileCreation {
            if(myFile.exists()){
                System.out.println("File already exists");
 
-               FileWriter myWriter = new FileWriter("/Users/ralexs/Desktop/Dev/nahum.txt");
-               myWriter.write("Files in java might be tricky, but it is fun enough!");
-               myWriter.close();
-               System.out.println("Successfully wrote to the file");
+               Scanner myReader = new Scanner(myFile);
+//               String fileInfo = myReader.nextLine();
+               System.out.println(myReader.nextLine());
+               System.out.println(myReader.nextLine());
            } else {
             System.out.println("File created " + myFile.getName());
            }
