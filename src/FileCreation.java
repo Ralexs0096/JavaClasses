@@ -15,10 +15,11 @@ public class FileCreation {
            if(myFile.exists()){
                System.out.println("File already exists");
 
-               Scanner myReader = new Scanner(myFile);
-//               String fileInfo = myReader.nextLine();
-               System.out.println(myReader.nextLine());
-               System.out.println(myReader.nextLine());
+               System.out.println(myFile.getName());
+               System.out.println(myFile.getAbsolutePath());
+               System.out.println(myFile.canWrite());
+               System.out.println(myFile.canRead());
+               System.out.println(myFile.length());
            } else {
             System.out.println("File created " + myFile.getName());
            }
