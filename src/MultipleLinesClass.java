@@ -1,22 +1,23 @@
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
 
 public class MultipleLinesClass {
     public static void main(String[] args) {
-        String filePath = "/Users/ralexs/Desktop/Dev/multiple.txt";
-        String[] lines = {
+        Path filePath = Paths.get("nahum.txt");
+        List<String> lines = Arrays.asList(
                 "First Line of the file",
                 "Second Line of the file",
-                "Third Line of the file",
-        };
+                "Third Line of the file"
+        );
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
-            for (String line : lines){
-                writer.write(line);
-                writer.newLine();
-            }
-        } catch (IOException e){
+        try {
+            Files.write(filePath, lines);
+            System.out.println("File was wrote");
+        } catch (IOException e) {
             System.out.println(e);
         }
     }
