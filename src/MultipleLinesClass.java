@@ -1,24 +1,23 @@
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.List;
+
 
 public class MultipleLinesClass {
     public static void main(String[] args) {
-        Path filePath = Paths.get("nahum.txt");
-        List<String> lines = Arrays.asList(
-                "First Line of the file",
-                "Second Line of the file",
-                "Third Line of the file"
-        );
-
-        try {
-            Files.write(filePath, lines);
-            System.out.println("File was wrote");
-        } catch (IOException e) {
-            System.out.println(e);
-        }
+        /**
+         * Please type a number (given number)
+         *
+         * generate table of the given number
+         *
+         * -- print the table on the console (first commit)
+         * -- create a new file with the name: "Table-<given number>" (second commit)
+         * -- Write the table on the created table-given-number file (third commit)
+         *
+         * note: the table contains the values from 1 to 12
+         *
+         *    7 * 1 = 7
+         *    7 * 2 = 14
+         *    7 * 3 = 21
+         *    ...
+         *    7 * 12 = 84
+         */
     }
 }
