@@ -10,11 +10,14 @@ public class MultipleLinesClass {
        Path filePath = Paths.get("Table-5.txt");
 
        try {
-           Files.delete(filePath);
-           System.out.println("File deleted");
+           boolean isDeleted = Files.deleteIfExists(filePath);
+           if(isDeleted) {
+               System.out.println("File was deleted successfully");
+           } else {
+               System.out.println("The file you are trying to delete doesn't exist");
+           }
        } catch (IOException e){
            System.err.println(e.getMessage());
        }
-
     }
 }
