@@ -1,18 +1,18 @@
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
 
 public class MultipleLinesClass {
     public static void main(String[] args) {
+        Path pathFile = Paths.get("test.txt");
+        try {
+            List<String> lines = Files.readAllLines(pathFile);
 
-        var keyboard = new Scanner(System.in);
-        System.out.println("Type a message: ");
-        String message = keyboard.nextLine();
-
-        try (FileWriter fileWriter = new  FileWriter("test.txt", true)) {
-
-           fileWriter.write("\n" + message);
-            System.out.println("File Updated with message: " + message);
+            for (int i = 0; i < lines.size(); i++) {
+                System.out.println(lines.get(i));
+            }
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
