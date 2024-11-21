@@ -2,18 +2,38 @@ import java.util.Stack;
 
 public class StackClass {
     public static void main(String[] args) {
-        var laundry = new Stack<String>();
+        String input = "([])}"; // balanced
 
-        // push is used to add new values to the stack
-        laundry.push("Dish 1");
-        laundry.push("Dish 2");
-        laundry.push("Dish 3");
+        var result = verifyIsBalanced(input);
 
-        // Pop removes the last added item
-        laundry.pop();
+        System.out.println("Is input balanced: " + result);
+    }
 
-        boolean isLaundryEmpty = laundry.isEmpty();
+    static boolean verifyIsBalanced(String input) {
+        var stack = new Stack<Character>();
 
-        System.out.println(isLaundryEmpty);
+        for (char c : input.toCharArray()) {
+            if (c == '(' || c == '[' || c == '{') {
+                stack.push(c);
+            } else if (c == ')' || c == ']' || c == '}') {
+                if (stack.isEmpty()) {
+                    return false;
+                }
+
+                var top = stack.peek();
+                System.out.println(top);
+                if (isBalanced(top, c)) {
+                    stack.pop();
+                }
+            }
+        }
+
+        return stack.isEmpty();
+    }
+
+    static boolean isBalanced(char open, char close) {
+        return (open == '(' && close == ')') ||
+                (open == '[' && close == ']') ||
+                (open == '{' && close == '}');
     }
 }
