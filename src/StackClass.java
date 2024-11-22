@@ -1,8 +1,9 @@
 import java.util.Stack;
+import java.util.function.BiPredicate;
 
 public class StackClass {
     public static void main(String[] args) {
-        String input = "([])}"; // balanced
+        String input = "([]){}"; // balanced
 
         var result = verifyIsBalanced(input);
 
@@ -10,6 +11,10 @@ public class StackClass {
     }
 
     static boolean verifyIsBalanced(String input) {
+        BiPredicate<Character, Character> isBalanced = (open, close) -> (open == '[' && close == ']') ||
+                (open == '(' && close == ')') ||
+                (open == '{' && close == '}');
+
         var stack = new Stack<Character>();
 
         for (char c : input.toCharArray()) {
@@ -21,8 +26,7 @@ public class StackClass {
                 }
 
                 var top = stack.peek();
-                System.out.println(top);
-                if (isBalanced(top, c)) {
+                if (isBalanced.test(top, c)) {
                     stack.pop();
                 }
             }
@@ -31,9 +35,4 @@ public class StackClass {
         return stack.isEmpty();
     }
 
-    static boolean isBalanced(char open, char close) {
-        return (open == '(' && close == ')') ||
-                (open == '[' && close == ']') ||
-                (open == '{' && close == '}');
-    }
 }
