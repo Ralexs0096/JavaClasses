@@ -11,9 +11,11 @@ public class StackClass {
     }
 
     static boolean verifyIsBalanced(String input) {
-        BiPredicate<Character, Character> isBalanced = (open, close) -> (open == '[' && close == ']') ||
-                (open == '(' && close == ')') ||
-                (open == '{' && close == '}');
+        BiPredicate<Character, Character> isBalanced =
+                (open, close) ->
+                        (open == '[' && close == ']') ||
+                                (open == '(' && close == ')') ||
+                                (open == '{' && close == '}');
 
         var stack = new Stack<Character>();
 
