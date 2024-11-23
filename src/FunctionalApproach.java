@@ -1,20 +1,15 @@
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
-import java.util.function.Supplier;
+import java.util.function.BiPredicate;
+import java.util.function.Predicate;
 
 public class FunctionalApproach {
     public static void main(String[] args) {
         // java by default use OOP
 
         // functional behavior
-        Consumer<Integer> printNumber = num -> System.out.println(num);
+        Predicate<Integer> isEven = num -> num % 2 == 0;
+        System.out.println(isEven.test(9));
 
-        Supplier<Double> randomNumber = () -> Math.random();
-
-        System.out.println(randomNumber.get());
+        BiPredicate<Integer, Integer> isGreater = (a, b) -> a > b;
+        System.out.println(isGreater.test(5, 9));
     }
-
-//    static void printMessage(String message) {
-//        System.out.println(message);
-//    }
 }
