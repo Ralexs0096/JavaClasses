@@ -1,17 +1,17 @@
 import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public class FunctionalApproach {
     public static void main(String[] args) {
         // java by default use OOP
 
         // functional behavior
-        BiConsumer<String, String> printMessage =
-                (message, name) ->
-                        System.out.println(String.format("""
-                                %s %s
-                                """, message, name));
+        Consumer<Integer> printNumber = num -> System.out.println(num);
 
-        printMessage.accept("Hey", "Nahum");
+        Supplier<Double> randomNumber = () -> Math.random();
+
+        System.out.println(randomNumber.get());
     }
 
 //    static void printMessage(String message) {
