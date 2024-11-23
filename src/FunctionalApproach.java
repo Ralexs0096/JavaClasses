@@ -1,13 +1,17 @@
-import java.util.function.Consumer;
+import java.util.function.BiConsumer;
 
 public class FunctionalApproach {
     public static void main(String[] args) {
         // java by default use OOP
 
         // functional behavior
-        Consumer<String> printMessage = message -> System.out.println(message);
+        BiConsumer<String, String> printMessage =
+                (message, name) ->
+                        System.out.println(String.format("""
+                                %s %s
+                                """, message, name));
 
-        printMessage.accept("Hello buddy");
+        printMessage.accept("Hey", "Nahum");
     }
 
 //    static void printMessage(String message) {
