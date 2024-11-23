@@ -1,15 +1,17 @@
-import java.util.function.BiPredicate;
-import java.util.function.Predicate;
+import java.util.function.BiFunction;
+import java.util.function.Function;
 
 public class FunctionalApproach {
     public static void main(String[] args) {
         // java by default use OOP
 
         // functional behavior
-        Predicate<Integer> isEven = num -> num % 2 == 0;
-        System.out.println(isEven.test(9));
+        Function<String, Integer> stringLength = value -> value.length();
 
-        BiPredicate<Integer, Integer> isGreater = (a, b) -> a > b;
-        System.out.println(isGreater.test(5, 9));
+        System.out.println(stringLength.apply("Nahum"));
+
+        BiFunction<Integer, Integer, Integer> add = (a, b) -> a + b;
+
+        System.out.println(add.apply(2, 5));
     }
 }
