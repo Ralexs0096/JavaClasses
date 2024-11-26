@@ -4,15 +4,14 @@ import java.util.TreeSet;
 
 public class SetClasses {
     public static void main(String[] args) {
-        Set<String> treeSet = new TreeSet<>();
+        /**
+         * Request to the user a list of possible winners
+         *
+         * - get an element randomly and print a message indicating the winner
+         *
+         * the award is up to you
+         */
 
-        treeSet.add("Banana");
-        treeSet.add("Mango");
-        treeSet.add("Apple");
-        treeSet.add("ABc");
-        treeSet.add("Cherry");
-        // the order is lexicographic
-
-        treeSet.forEach(System.out::println);
+        // TODO: your code here
     }
 }
