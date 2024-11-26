@@ -1,18 +1,18 @@
-import java.util.LinkedHashSet;
+
 import java.util.Set;
+import java.util.TreeSet;
 
 public class SetClasses {
     public static void main(String[] args) {
-        Set<Integer> linkedHashSet = new LinkedHashSet<>();
+        Set<String> treeSet = new TreeSet<>();
 
-        linkedHashSet.add(12);
-        linkedHashSet.add(56);
-        linkedHashSet.add(78);
-        linkedHashSet.add(3);
-        linkedHashSet.add(2);
-        linkedHashSet.add(12);
-        // the order is preserved
+        treeSet.add("Banana");
+        treeSet.add("Mango");
+        treeSet.add("Apple");
+        treeSet.add("ABc");
+        treeSet.add("Cherry");
+        // the order is lexicographic
 
-        linkedHashSet.forEach(System.out::println);
+        treeSet.forEach(System.out::println);
     }
 }
