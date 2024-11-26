@@ -1,17 +1,17 @@
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class SetClasses {
     public static void main(String[] args) {
-        Set<String> hashSet = new HashSet<>();
+        Set<String> linkedHashSet = new LinkedHashSet<>();
 
-        hashSet.add("Mango");
-        hashSet.add("Banana");
-        hashSet.add("Apple");
-        hashSet.add("Pear");
-        hashSet.add("Cherry");
-        // the order can change
+        linkedHashSet.add("Apple");
+        linkedHashSet.add("Banana");
+        linkedHashSet.add("Cherry");
+        linkedHashSet.add("Mango");
+        linkedHashSet.add("Pear");
+        // the order is preserved
 
-        hashSet.forEach(System.out::println);
+        linkedHashSet.forEach(System.out::println);
     }
 }
