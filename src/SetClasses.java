@@ -19,6 +19,7 @@ public class SetClasses {
         participants.add("Jenny");
         participants.add("Alex");
         participants.add("Nahum");
+        participants.add("Fernanda");
 
         LinkedHashSet<String> awards = new LinkedHashSet<>();
         awards.add("Car");
