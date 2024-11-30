@@ -1,23 +1,19 @@
 import java.util.EnumSet;
 
+enum Permission {
+    READ, WRITE, EXECUTE, DELETE
+}
+
 public class EnumSetClass {
     public static void main(String[] args) {
-        // Enum - Enumeration
-        enum Day {
-            MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
-        }
+        EnumSet<Permission> userPermissions = EnumSet.of(Permission.READ, Permission.EXECUTE);
 
-        EnumSet<Day> allDays = EnumSet.allOf(Day.class);
-        System.out.println(allDays);
+        System.out.println(userPermissions.contains(Permission.DELETE)); // false
 
-        EnumSet<Day> noDays = EnumSet.noneOf(Day.class);
-        System.out.println(noDays);
+        userPermissions.add(Permission.WRITE);
+        System.out.println(userPermissions); // [READ, WRITE, EXECUTE]
 
-        noDays.add(Day.MONDAY);
-//        noDays.add(null); // values are checked by the compiler
-
-        // the implementation is faster since is using bits under the hood.
-
-
+        userPermissions.remove(Permission.READ);
+        System.out.println(userPermissions); // [WRITE, EXECUTE]
     }
 }
