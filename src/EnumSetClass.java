@@ -28,13 +28,25 @@ class User {
         return this.permissions.contains(permission);
     }
 
-    public void showPermissions(Permission permission) {
+    public void showPermissions() {
         System.out.println(username + "'s permissions: " + this.permissions);
     }
 }
 
 public class EnumSetClass {
     public static void main(String[] args) {
+        var nahum = new User("Nahum");
+        User carlos = new User("Carlos");
 
+        nahum.grantPermission(Permission.READ);
+        nahum.grantPermission(Permission.WRITE);
+        nahum.showPermissions();
+
+        System.out.println("Nahum can Read? " + nahum.hasPermission(Permission.READ));
+        nahum.revokePermission(Permission.READ);
+        System.out.println("Nahum can Read? " + nahum.hasPermission(Permission.READ));
+
+        carlos.grantPermission(Permission.EXECUTE);
+        carlos.showPermissions();
     }
 }
