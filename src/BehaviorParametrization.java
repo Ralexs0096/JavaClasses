@@ -9,6 +9,10 @@ class Apple {
     public Color getColor() {
         return Color.RED;
     }
+
+    public Integer getWeight() {
+        return 1;
+    }
 }
 
 public class BehaviorParametrization {
@@ -32,14 +36,26 @@ public class BehaviorParametrization {
     }
 
     static List<Apple> filterRedApples(List<Apple> inventory) {
-        List<Apple> greenApples = new ArrayList<>();
+        List<Apple> redApple = new ArrayList<>();
 
         for (Apple apple : inventory) {
             if (Color.RED.equals(apple.getColor())) {
-                greenApples.add(apple);
+                redApple.add(apple);
             }
         }
 
-        return greenApples;
+        return redApple;
+    }
+
+    static List<Apple> filterApplesByWeight(List<Apple> inventory, int weight) {
+        List<Apple> result = new ArrayList<>();
+
+        for (Apple apple : inventory) {
+            if (apple.getWeight() > weight) {
+                result.add(apple);
+            }
+        }
+
+        return result;
     }
 }
