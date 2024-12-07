@@ -19,31 +19,13 @@ interface ApplePredicate {
     boolean test(Apple apple);
 }
 
-class AppleGreenColorPredicate implements ApplePredicate {
-    public boolean test(Apple apple) {
-        return Color.GREEN.equals(apple.getColor());
-    }
-}
-
-class AppleRedColorPredicate implements ApplePredicate {
-    public boolean test(Apple apple) {
-        return Color.RED.equals(apple.getColor());
-    }
-}
-
-class AppleHeavyPredicate implements ApplePredicate {
-    public boolean test(Apple apple) {
-        return apple.getWeight() > 150;
-    }
-}
-
 public class BehaviorParametrization {
     public static void main(String[] args) {
         ArrayList<Apple> inventory = new ArrayList<>();
 
-        var greenApples = filterApples(inventory, new AppleGreenColorPredicate());
-        var redApples = filterApples(inventory, new AppleRedColorPredicate());
-        var heavyApples = filterApples(inventory, new AppleHeavyPredicate());
+        var greenApples = filterApples(inventory, (Apple apple) -> Color.GREEN.equals(apple.getColor()));
+        var redApples = filterApples(inventory, (Apple apple) -> Color.RED.equals(apple.getColor()));
+        var heavyApples = filterApples(inventory, (Apple apple) -> apple.getWeight() > 150);
 
     }
 
